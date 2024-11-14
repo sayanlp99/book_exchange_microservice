@@ -3,19 +3,17 @@
 ---
 
 ## Table of Contents
-1. **Introduction**
-2. **Architecture Overview**
-3. **Service Descriptions**
-   - 3.1 Authentication Service
-   - 3.2 Book Service
-   - 3.3 Exchange Service
-   - 3.4 API Gateway
-4. **Service Communication Flow**
-5. **Port Configuration**
-6. **Error Handling & Logging**
-7. **Security Considerations**
-8. **Future Improvements**
-9. **Conclusion**
+1. [Introduction](#1-introduction)
+2. [Architecture Overview](#2-architecture-overview)
+3. [Service Descriptions](#3-service-descriptions)
+   - 3.1 [Authentication Service](#31-authentication-service)
+   - 3.2 [Book Service](#32-book-service)
+   - 3.3 [Exchange Service](#33-exchange-service)
+   - 3.4 [API Gateway](#34-api-gateway)
+4. [Service Communication Flow](#4-service-communication-flow)
+5. [Port Configuration](#5-port-configuration)
+6. [Error Handling & Logging](#6-error-handling--logging)
+7. [Security Considerations](#7-security-considerations)
 
 ---
 
