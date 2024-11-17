@@ -1,3 +1,9 @@
 [submodule "api_gateway"]
 	path = api_gateway
 	url = https://github.com/sayanlp99/api_gateway.git
+[submodule "authentication_service"]
+	path = authentication_service
+	url = https://github.com/Kavyashree1283/book_service_auth.git
+[submodule "book_service"]
+	path = book_service
+	url = https://github.com/AswiniB16/Book-Crud-Repository.git
