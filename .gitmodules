@@ -7,6 +7,3 @@
 [submodule "book_service"]
 	path = book_service
 	url = https://github.com/AswiniB16/Book-Crud-Repository.git
-[submodule "exchange_service"]
-	path = exchange_service
-	url = https://github.com/Sg-1407/exchange_service.git
