@@ -13,9 +13,10 @@
 4. [System Requirements](#4-system-requirements)
 5. [Service Communication Flow](#5-service-communication-flow)
 6. [Port Configuration](#6-port-configuration)
-7. [Endpoint Overview](#7-endpoints-overview)
-8. [Testing using Swagger]()
-9. [Error Handling & Logging](#9-error-handling--logging)
+7. [Database Pattern](#7-database-pattern)
+8. [Endpoint Overview](#8-endpoints-overview)
+9. [Testing using Swagger](#9-testing-with-swagger)
+10. [Error Handling & Logging](#10-error-handling--logging)
 
 ---
 
@@ -123,7 +124,11 @@ This setup enables clear separation of services while facilitating debugging and
 
 ---
 
-### 7. Endpoints Overview
+### 7. Database Pattern
+
+---
+
+### 8. Endpoints Overview
 
 #### **Auth Service**
 | Method | Endpoint          | Description                   |
@@ -150,15 +155,19 @@ This setup enables clear separation of services while facilitating debugging and
 | DELETE | `/exchange/<exchange_id>`         | Deletes a specific exchange request      |
 
 ---
-### 8. Testing with Swagger
+### 9. Testing with Swagger
 
 ![Swagger](assets/swagger.png "Swagger")
 
 ---
 
-### 9. Error Handling & Logging
+### 10. Error Handling & Logging
 
 - **Standardized Error Responses:** Ensure that each service returns consistent error codes and messages.
 - **Logging Mechanism:** Detail the logging setup for tracking errors, requests, and other significant events.
+
+---
+
+### 11. Contributors
 
 ---
