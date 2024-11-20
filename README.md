@@ -10,10 +10,12 @@
    - 3.2 [Book Service](#32-book-service)
    - 3.3 [Exchange Service](#33-exchange-service)
    - 3.4 [API Gateway](#34-api-gateway)
-4. [Service Communication Flow](#4-service-communication-flow)
-5. [Port Configuration](#5-port-configuration)
-6. [Error Handling & Logging](#6-error-handling--logging)
-7. [Security Considerations](#7-security-considerations)
+4. [System Requirements](#4-system-requirements)
+5. [Service Communication Flow](#5-service-communication-flow)
+6. [Port Configuration](#6-port-configuration)
+7. [Endpoint Overview](#7-endpoints-overview)
+8. [Testing using Swagger]()
+9. [Error Handling & Logging](#9-error-handling--logging)
 
 ---
 
@@ -84,7 +86,22 @@ This architecture promotes scalability and simplifies maintenance by decoupling 
 
 ---
 
-### 4. Service Communication Flow
+### 4. System Requirements
+
+- **Operating System**: Windows/Linux/macOS  
+- **Tools and Dependencies**:
+  - **JDK**: For Book Service (Java with Spring Boot)  
+  - **Python 3.10+**: For API Gateway (Flask)  
+  - **Node.js 18+**: For Authentication and Exchange Services (Express)  
+  - **PostgreSQL 15+**: Database for Book Service  
+  - **MongoDB 6.0+**: Database for Authentication Service  
+  - **MySQL 8.0+**: Database for Exchange Service  
+  - **VSCode**: Code Editor  
+  - **Git**: Version Control  
+
+---
+
+### 5. Service Communication Flow
 Illustrate the request-response workflow among the services. For example:
 - **Client Request:** A client makes a request via the API Gateway.
 - **Gateway Routing:** API Gateway routes the request to the appropriate service.
@@ -117,7 +134,7 @@ sequenceDiagram
 ```
 ---
 
-### 5. Port Configuration
+### 6. Port Configuration
 Outline the port configuration for each service:
 - **API Gateway:** 3000
 - **Authentication Service:** 3001
@@ -128,17 +145,42 @@ This setup enables clear separation of services while facilitating debugging and
 
 ---
 
-### 6. Error Handling & Logging
-Discuss the error handling strategies used within each service, including:
-- **Standardized Error Responses:** Ensure that each service returns consistent error codes and messages.
-- **Logging Mechanism:** Detail the logging setup for tracking errors, requests, and other significant events.
+### 7. Endpoints Overview
+
+#### **Auth Service**
+| Method | Endpoint          | Description                   |
+|--------|-------------------|-------------------------------|
+| POST   | `/auth/register`   | Registers a new user          |
+| POST   | `/auth/login`      | Logs in a user and returns JWT|
+| GET    | `/auth/profile`    | Retrieves user profile        |
+
+#### **Book Service**
+| Method | Endpoint              | Description                            |
+|--------|-----------------------|----------------------------------------|
+| GET    | `/books`              | Retrieves all books                   |
+| GET    | `/books/<book_id>`    | Retrieves a specific book by ID        |
+| POST   | `/books`              | Adds a new book                        |
+| PATCH  | `/books/<book_id>`    | Updates availability status of a book  |
+| DELETE | `/books/<book_id>`    | Deletes a specific book by ID          |
+
+#### **Exchange Service**
+| Method | Endpoint                           | Description                              |
+|--------|-----------------------------------|------------------------------------------|
+| POST   | `/exchange`                       | Creates a new exchange request           |
+| GET    | `/exchange/user/<user_id>`        | Retrieves exchange requests for a user   |
+| PUT    | `/exchange/<exchange_id>`         | Updates status of a specific exchange    |
+| DELETE | `/exchange/<exchange_id>`         | Deletes a specific exchange request      |
+
+---
+### 8. Testing with Swagger
+
+![Swagger](assets\swagger.png "Swagger")
 
 ---
 
-### 7. Security Considerations
-Outline security practices for the platform, including:
-- **Authentication Tokens:** How tokens are generated, validated, and refreshed.
-- **Data Encryption:** Briefly describe any encryption used for sensitive data.
-- **Access Control:** Explain the role-based access or permissions system (if applicable).
+### 9. Error Handling & Logging
+
+- **Standardized Error Responses:** Ensure that each service returns consistent error codes and messages.
+- **Logging Mechanism:** Detail the logging setup for tracking errors, requests, and other significant events.
 
 ---
