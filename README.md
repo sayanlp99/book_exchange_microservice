@@ -108,30 +108,8 @@ Illustrate the request-response workflow among the services. For example:
 - **Authentication Flow:** If authentication is required, the service first contacts the Authentication service for token validation before processing the request.
 - **Response Aggregation:** API Gateway collects the responses and forwards them back to the client.
 
-```mermaid
+![Flow](assets/flow.png "Flow")
 
-sequenceDiagram
-    participant User as User
-    participant Gateway as API Gateway
-    participant Auth as Authentication Service
-    participant Book as Book Service
-    participant Exchange as Exchange Service
-
-    User->>Gateway: Send request (e.g., login, book exchange)
-    Gateway->>Auth: Send authentication request (login)
-    Auth->>Auth: Validate user credentials (MongoDB)
-    Auth->>Gateway: Return authentication token
-    Gateway->>Book: Send request to manage book (e.g., view, add)
-    Book->>Book: Query book data (PostgreSQL)
-    Book->>Gateway: Return book data
-    Gateway->>Exchange: Send exchange request (create/track)
-    Exchange->>Auth: Validate user for exchange
-    Auth->>Auth: Verify user token
-    Exchange->>Exchange: Process exchange request
-    Exchange->>Gateway: Return exchange status
-    Gateway->>User: Return response (data/status)
-
-```
 ---
 
 ### 6. Port Configuration
