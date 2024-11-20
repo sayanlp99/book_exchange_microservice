@@ -45,7 +45,7 @@ The architecture consists of the following components:
 - **API Gateway** (Flask + Swagger, Port: 3000): The API Gateway, built with Flask and integrated with Swagger for API documentation, acts as the single entry point for all client requests. It routes incoming traffic to the appropriate microservices (Authentication, Book, or Exchange) and aggregates responses, ensuring a consistent and user-friendly API experience for clients.
 
 
-![HighLevelDiagram](assets\hld.png "HighLevelDiagram")
+![HighLevelDiagram](assets/hld.png "HighLevelDiagram")
 
 
 **Communication Flow:**  
@@ -174,7 +174,7 @@ This setup enables clear separation of services while facilitating debugging and
 ---
 ### 8. Testing with Swagger
 
-![Swagger](assets\swagger.png "Swagger")
+![Swagger](assets/swagger.png "Swagger")
 
 ---
 
