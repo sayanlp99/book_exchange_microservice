@@ -14,6 +14,9 @@
 5. [Service Communication Flow](#5-service-communication-flow)
 6. [Port Configuration](#6-port-configuration)
 7. [Database Pattern](#7-database-pattern)
+   - 7.1 [Auth Service Database Pattern](#71-auth-service-database-pattern)
+   - 7.2 [Book Service Database Pattern](#72-book-service-database-pattern)
+   - 7.3 [Exchange Service Database Pattern](#73-exchange-service-database-pattern)
 8. [Endpoint Overview](#8-endpoints-overview)
 9. [Testing using Swagger](#9-testing-with-swagger)
 10. [Error Handling & Logging](#10-error-handling--logging)
@@ -126,6 +129,18 @@ This setup enables clear separation of services while facilitating debugging and
 
 ### 7. Database Pattern
 
+#### 7.1 **Auth Service Database Pattern**
+
+![Flow](assets/auth_db.png "DB")
+
+#### 7.2 **Book Service Database Pattern**
+
+![Flow](assets/book_db.jpg "DB")
+
+#### 7.3 **Exchange Service Database Pattern**
+
+![Flow](assets/exchange_db.jpg "DB")
+
 ---
 
 ### 8. Endpoints Overview
@@ -169,5 +184,99 @@ This setup enables clear separation of services while facilitating debugging and
 ---
 
 ### 11. Contributors
+
+  - **Sayan Chakraborty, 2023TM93710**
+
+    - [api_gateway_repo](https://github.com/sayanlp99/api_gateway)
+
+    - Drafted the **comprehensive project documentation** in GitHub's `README.md`, covering architecture, setup instructions, API details, integration guidelines, and deployment steps.  
+
+    - Designed the **final API endpoints**, defining HTTP methods, URL patterns, payloads, responses, and error handling, which served as a reference for the team.
+
+    - Created the **API Gateway**, which included routing to microservices, JWT-based authentication, centralized token validation, consistent error handling, Swagger UI documentation, and detailed logging.  
+
+    - Conducted **final testing of the API Gateway**, ensuring seamless routing, security, error management, and optimal performance under load.  
+
+    - Tested each **microservice independently**, verifying adherence to specifications, database communication reliability, and proper error handling to ensure smooth integration and functionality.  
+
+  - **Kavyashree N, 2023TM93699**
+
+    - [auth_service_repo](https://github.com/Kavyashree1283/book_service_auth)
+
+    - Authentication Service
+
+      - User Registration:
+        Users register by providing a username, email, and password.
+        Registration data is securely stored in a MongoDB database.
+      
+      - Login Process:
+          Users log in using their registered email and password.
+
+    - Tech Stack
+      - Frontend: React.js
+      - Backend: Node.js
+      - Database: MongoDB
+
+  - **Aswini B, 2023TM93635**
+
+    - [book_service_repo](https://github.com/AswiniB16/Book-Crud-Repository)
+    
+    - Book Service
+      -  The Book CRUD Service is a microservice designed to manage books efficiently by supporting CRUD (Create, Read, Update, Delete) operations. It provides functionality for managing book listings, searching with optional filters, and performing add, edit, and delete operations.
+
+      - Core Services
+      1. Book Listing Service:
+        Manages book search functionality.
+        Includes filter options for refined searches.
+      2. Manage Book Service:
+        Enables the addition of new books.
+        Supports editing and deletion of existing books.
+	
+    - Architecture:
+    The application follows a layered architecture with clearly defined roles:
+
+    1. Controller Layer:
+      Exposes RESTful APIs for frontend communication.
+      Handles HTTP requests and responses.
+    2. Service Layer:
+      Implements the core business logic for CRUD operations.
+      Acts as a bridge between the Controller and Repository layers.
+    3. Repository Layer:
+      Uses Spring Data JPA for interacting with the PostgreSQL database.
+      Provides an abstraction for data persistence operations.
+
+    - Tech Stack
+      - Backend: Java Spring Boot,
+    A robust framework for building scalable and maintainable backend services.
+
+      - Database: PostgreSQL,
+    A reliable relational database for storing and managing book data.
+    
+    This service can scale to handle large book collections and is built for seamless integration in larger systems.
+
+
+  - **Shraddha Gupta, 2023TM93616**
+
+    - [exchange_service_repo](https://github.com/Sg-1407/exchange_service)
+    
+    - Exchange Service
+
+      - The Exchange Service was developed to facilitate book exchanges between users by providing a seamless API for managing exchange requests. My contribution to this project involved designing, developing, and implementing the backend architecture using *Node.js, **Express.js, and **MySQL* with *Sequelize ORM* to ensure scalability, efficiency, and maintainability.
+
+      - Developed RESTful APIs to support CRUD operations using MySQL for exchange requests:
+      - Create: Allow users to submit new exchange requests by specifying details such as the lender ID, borrower ID, book ID, and request status.
+      - Read: Implemented a listing endpoint to fetch exchange requests for a specific user based on their ID, ensuring secure and efficient data retrieval.
+      - Update: Enabled users to modify the status of an existing exchange request (e.g., from "pending" to "approved").
+      - Delete: Implemented functionality for deleting exchange requests by ID.
+      - Utilized Express.js to handle routing and middleware for processing requests and responses.
+
+      - Sequelize ORM Integration: Leveraged Sequelize ORM to simplify database operations, such as querying, inserting, updating, and deleting data.Implemented model definitions for key entities and used Sequelize migrations to maintain schema versioning.
+
+      - Error Handling and Validation: Added comprehensive error handling to ensure the API responds gracefully to invalid input or database errors.
+
+      - Tech Stack: 
+         - Backend : Nodejs
+         - Tested tools : Postman
+         - Database : MySQL
 
 ---
